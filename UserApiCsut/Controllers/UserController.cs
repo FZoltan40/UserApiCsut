@@ -32,6 +32,22 @@ namespace UserApiCsut.Controllers
             }
         }
 
+        [HttpGet("allLicensedUser")]
+        public ActionResult<User> GetLicense()
+        {
+            using (var context = new UserDbContext())
+            {
+                var user = context.NewUsers.Select(x => new { x.Name, x.License }).Where(x => x.License == true);
+
+                if (user != null)
+                {
+
+                    return Ok(user.ToList());
+                }
+                return BadRequest();
+            }
+        }
+
         [HttpPost]
         public ActionResult<User> Post([FromBody] CreateUserDto createUserDto)
         {
