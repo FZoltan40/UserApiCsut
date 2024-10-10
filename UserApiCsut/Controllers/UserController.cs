@@ -64,5 +64,26 @@ namespace UserApiCsut.Controllers
                 return NotFound();
             }
         }
+
+        [HttpDelete]
+        public ActionResult<object> Delete(Guid id)
+        {
+            using (var context = new UserDbContext())
+            {
+                var user = context.NewUsers.FirstOrDefault(x => x.Id == id);
+
+                if (user != null)
+                {
+                    context.NewUsers.Remove(user);
+                    context.SaveChanges();
+
+                    return StatusCode(200, new { message = "Sikeres törlés!" });
+
+                }
+
+                return StatusCode(404, new { message = "Nincs mit törölni!" });
+            }
+        }
+
     }
 }
