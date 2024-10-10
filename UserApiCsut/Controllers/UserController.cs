@@ -18,7 +18,7 @@ namespace UserApiCsut.Controllers
         }
 
         [HttpPost]
-        public ActionResult<User> Post(CreateUserDto createUserDto)
+        public ActionResult<User> Post([FromBody] CreateUserDto createUserDto)
         {
             using (var context = new UserDbContext())
             {
@@ -39,6 +39,29 @@ namespace UserApiCsut.Controllers
 
                 return BadRequest();
 
+            }
+        }
+
+        [HttpPut]
+        public ActionResult<User> Put(Guid id, UpdateUserDto updateUserDto)
+        {
+            using (var context = new UserDbContext())
+            {
+                var existingUser = context.NewUsers.FirstOrDefault(x => x.Id == id);
+
+                if (existingUser != null)
+                {
+                    existingUser.Name = updateUserDto.Name;
+                    existingUser.Age = updateUserDto.Age;
+                    existingUser.License = updateUserDto.License;
+
+                    context.NewUsers.Update(existingUser);
+                    context.SaveChanges();
+
+                    return StatusCode(200, existingUser);
+                }
+
+                return NotFound();
             }
         }
     }

@@ -44,5 +44,36 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "UserApiCsut.Controllers.UserController",
+    "Method": "Put",
+    "RelativePath": "users",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateUserDto",
+        "Type": "UserApiCsut.Models.Dto\u002BUpdateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "UserApiCsut.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

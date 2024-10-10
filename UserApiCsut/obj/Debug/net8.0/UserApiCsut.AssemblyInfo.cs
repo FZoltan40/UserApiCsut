@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserApiCsut")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9f1fd303950cc810ebd6aecf49d0acd0aa7115b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f87311ff8861afcb4bf43b9138a050101107420e")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserApiCsut")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserApiCsut")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
