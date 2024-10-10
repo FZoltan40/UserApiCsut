@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "UserApiCsut.Controllers.WeatherForecastController",
+    "ContainingType": "UserApiCsut.Controllers.UserController",
     "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[UserApiCsut.WeatherForecast, UserApiCsut, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "UserApiCsut.Models.User",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -17,7 +17,32 @@
         ],
         "StatusCode": 200
       }
+    ]
+  },
+  {
+    "ContainingType": "UserApiCsut.Controllers.UserController",
+    "Method": "Post",
+    "RelativePath": "users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createUserDto",
+        "Type": "UserApiCsut.Models.Dto\u002BCreateUserDto",
+        "IsRequired": true
+      }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": [
+      {
+        "Type": "UserApiCsut.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
